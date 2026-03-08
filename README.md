@@ -28,10 +28,20 @@ The algorithm operates in two distinct phases:
 * **Accurate Tracking**: A differential-based estimator $\mathfrak{E}$ that iteratively optimizes beamforming and phase shifts.
 
 The estimator is defined as:
-$$\mathfrak{E}(x_{1},x_{2}):\begin{cases}\dot{x}_{1}=-c_{1}sin~x_{1} \\ \dot{x}_{2}=-c_{2}sin~x_{2}\end{cases}$$
+
+$$
+\mathfrak{E}(x_{1},x_{2}):
+\begin{cases}
+\dot{x}_{1} = -c_{1}\sin x_{1} \\
+\dot{x}_{2} = -c_{2}\sin x_{2}
+\end{cases}
+$$
 
 Stability is proven using the following Lyapunov function:
-$$\mathcal{V}=2-cos^{2}x_{1}-cos^{2}x_{2}\ge0$$
+
+$$
+\mathcal{V} = 2 - \cos^{2}x_{1} - \cos^{2}x_{2} \ge 0
+$$
 
 ---
 

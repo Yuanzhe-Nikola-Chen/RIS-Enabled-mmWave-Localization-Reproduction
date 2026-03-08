@@ -62,7 +62,7 @@ This code is an independent reproduction of research conducted at the **School o
 ---
 
 ## 👤 Author
-** Yuanzhe (Nikola) Chen**
+**Yuanzhe (Nikola) Chen**
 * M.Eng in Electrical Engineering student @ UNSW Sydney.
 * Tesla Engineering Key Opinion Leader (KOL).
 * Interested in Robotics, Path Planning, and Embodied AI.

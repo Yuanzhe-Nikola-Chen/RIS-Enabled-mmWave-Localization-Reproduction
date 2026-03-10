@@ -49,3 +49,29 @@ origin = [lat_BS_Tx, lon_BS_Tx, 0];
 fprintf('BS_Tx 位置：[%.2f, %.2f, %.2f] m\n', x_BS_Tx, y_BS_Tx, z_BS_Tx);
 fprintf('BS_Rx 位置：[%.2f, %.2f, %.2f] m\n', x_BS_Rx, y_BS_Rx, z_BS_Rx);
 fprintf('RV    位置：[%.2f, %.2f, %.2f] m\n', x_RV, y_RV, z_Rv);
+
+% ============================================
+% Step 2: 硬件模型配置（Hardware Configuration）
+% ============================================
+
+% 1. 定义阵列参数
+N_rows = 20; N_cols = 20;
+M_elements = N_rows * N_cols; % 总振子数 400
+lambda = physconst('LightSpeed') / fc;
+d = 0.5 * lambda; % 间距 0.5 lambda
+
+% 2. 创建 UPA 阵列模型
+% 使用 Phased Array System Toolbox 定义均匀平面阵列
+array_model = phased.URA('Size',, [N_rows, N_cols], 'ElementSpacing', [d, d]);
+
+% 3. 将阵列挂载到基站和车辆
+% BS_Tx 发射端波束成形
+tx.Antenna = array_model;
+% BS_Rx 接收端
+rx.Antenna = array_model;
+
+% 4. 初始化 RIS 相位偏移矩阵 Psi
+% 初始状态为单位矩阵（无附加相移）
+Psi_RIS = diag(exp(1j * zeros(M_elements, 1)));
+
+fprintf('硬件配置完成：已初始化 %d 单元的 RIS 阵列 \n', M_elements);

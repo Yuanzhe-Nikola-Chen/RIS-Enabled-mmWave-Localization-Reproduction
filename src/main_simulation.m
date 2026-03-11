@@ -95,7 +95,7 @@ for k = 1:20
 
     % 离散化估计算法更新
     x1_net = x1 + c1 * y_Rx_k * (x1 - x1_prev);
-    x2_net = x2+ c2 * y_Rx_k * (x2 - x2_prev);
+    x2_net = x2 + c2 * y_Rx_k * (x2 - x2_prev);
 
     % 更新波束指向并计算新的信号强度...
     % 当 y_Rx_k 趋于 0 时，算法收敛

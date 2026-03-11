@@ -75,3 +75,28 @@ rx.Antenna = array_model;
 Psi_RIS = diag(exp(1j * zeros(M_elements, 1)));
 
 fprintf('硬件配置完成：已初始化 %d 单元的 RIS 阵列 \n', M_elements);
+
+% ===================================================
+% Step 3: 核心微分估计算法（Estimator E Implementation）
+% ===================================================
+
+% 初始估计误差（假设几米量级）
+x1 = delta_phi_inc; % 方位角误差
+x2 = delta_zeta_inc; % 俯仰角误差
+
+% 学习率/增益常数（need to < 1 to ensure convergence）
+c1 = 0.5; c2 = 0.5;
+
+% 仿真迭代过程
+for k = 1:20
+    % 计算当前接收信号强度的变化率 y_Rx
+    % mag_diff 为当前时刻与上一时刻信号幅值的差
+    y_Rx_k = sign(mag_now - mag_prev);
+
+    % 离散化估计算法更新
+    x1_net = x1 + c1 * y_Rx_k * (x1 - x1_prev);
+    x2_net = x2+ c2 * y_Rx_k * (x2 - x2_prev);
+
+    % 更新波束指向并计算新的信号强度...
+    % 当 y_Rx_k 趋于 0 时，算法收敛
+end

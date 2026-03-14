@@ -75,4 +75,4 @@ This code is an independent reproduction of research conducted at the **School o
 **Yuanzhe (Nikola) Chen**
 * M.Eng in Electrical Engineering student @ UNSW Sydney.
 * Tesla Engineering Key Opinion Leader (KOL).
-* Interested in Robotics, Path Planning, and Embodied AI.
+* Interested in Autonomous Driving Systems, Robotics, Path Planning, and Embodied AI.

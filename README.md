@@ -1,78 +1,100 @@
-# RIS-mmWave-Localization-Reproduction
+# RIS-Enabled Integrated Localization and Communication for Autonomous Systems
 
-[![MATLAB](https://img.shields.io/badge/MATLAB-R2026a-blue.svg)](https://www.mathworks.com/products/matlab.html)
-[![Location](https://img.shields.io/badge/Environment-Sydney_CBD-orange.svg)](https://www.openstreetmap.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+This repository provides a research-oriented reproduction and structured implementation of RIS-enabled integrated localization and communication (ILAC) for autonomous vehicles.
 
-This repository contains a high-fidelity MATLAB implementation of the **RIS-enabled integrated localization and communication (ILAC)** framework. The project focuses on achieving centimeter-level localization accuracy for autonomous vehicles in dense urban environments by leveraging B5G/6G wireless networks.
-
-## 🚀 Highlights
-* **High Precision**: Achieves a 3D positioning accuracy of **20 cm** in simulated dense urban settings.
-* **Energy Efficient**: Utilizes passive Reconfigurable Intelligent Surfaces (RIS) mounted on the vehicle roof, requiring minimal energy and computing resources.
-* **Robust Control**: Implements a non-linear estimator verified by the **Lyapunov direct method** to ensure global stability in dynamic environments.
-* **Real-world Context**: Built using OpenStreetMap (OSM) data of **Sydney, Australia**, with 3D ray-tracing channel modeling.
+Based on the work:
+Eskandari, Savkin, Deghat (IEEE TGCN, 2026)
 
 ---
 
-## 🛠️ System Architecture
+## Overview
 
-### 1. Environment & Channel Modeling
-The simulation is grounded in a 3D reconstruction of the Sydney CBD.
-* **Carrier Frequency**: 30 GHz (mmWave).
-* **Array Configuration**: $20 \times 20$ Massive MIMO Base Stations ($BS_{Tx}$, $BS_{Rx}$) and a roof-mounted RIS.
-* **Propagation**: Includes free-space loss, reflection loss, and multi-path scattering effects simulated via MATLAB's ray-tracing engine.
+This project investigates how reconfigurable intelligent surfaces (RIS) can enhance localization and communication performance in autonomous systems, particularly in mmWave environments.
 
-### 2. Localization Strategy
-The algorithm operates in two distinct phases:
-* **Initial Estimation**: 100-sample Particle Filtering to obtain a coarse pose estimate within a few meters.
-* **Accurate Tracking**: A differential-based estimator $\mathfrak{E}$ that iteratively optimizes beamforming and phase shifts.
+The focus is on:
 
-The estimator is defined as:
-
-$$
-\mathfrak{E}(x_{1},x_{2}):
-\begin{cases}
-\dot{x}_{1} = -c_{1}\sin x_{1} \\
-\dot{x}_{2} = -c_{2}\sin x_{2}
-\end{cases}
-$$
-
-Stability is proven using the following Lyapunov function:
-
-$$
-\mathcal{V} = 2 - \cos^{2}x_{1} - \cos^{2}x_{2} \ge 0
-$$
+- Modeling cascaded RIS-assisted communication channels  
+- Designing beamforming and phase-shift strategies  
+- Developing localization estimators with stability guarantees  
+- Integrating communication and localization into a unified framework  
 
 ---
 
-## 📈 Performance
-In simulated urban canyons, the estimator converges to an accuracy of a few tens of centimeters within **10-20 iterations**. Even under multi-path interference (up to 5 rays), the system maintains robust convergence through the use of virtual loop closures in a pose-graph SLAM framework.
+## Method
+
+The system combines communication modeling, control-inspired estimation, and SLAM techniques:
+
+- Cascaded BS → RIS → Receiver channel model  
+- Geometry-based beam steering for directional communication  
+- Differential estimator with Lyapunov stability analysis  
+- Particle filter for initialization  
+- Pose graph SLAM for drift correction  
+
+All modules are implemented in MATLAB with explicit equation-to-code mapping.
 
 ---
 
-## 💻 Getting Started
+## Key Contributions
 
-### Prerequisites
-* MATLAB R2024b or later.
-* **Toolboxes**: Communications Toolbox, Phased Array System Toolbox, and Mapping Toolbox.
-
-### Execution
-1. Clone the repository and ensure `sydney.osm` is in the working directory.
-2. Run `main_simulation.m` to initialize the 3D environment and start the localization loop.
-3. Observe the convergence of signal strength and reduction in localization error in the generated figures.
+- Full reproduction of RIS-enabled ILAC pipeline  
+- Explicit mapping from theoretical equations to implementation  
+- Integration of communication, localization, and SLAM  
+- Stability-aware estimator design  
+- Analysis of multipath effects in mmWave environments  
 
 ---
 
-## 📚 Acknowledgments & Citations
-This code is an independent reproduction of research conducted at the **School of Electrical Engineering and Telecommunications, UNSW Sydney**.
+## Simulation Pipeline
 
-**Original Paper:**
-> M. Eskandari, A. V. Savkin, and M. Deghat, "RIS-Enabled Energy Efficient Integrated Localization and Communication for Autonomous Vehicles: Complementary to Visual SLAM," *IEEE Transactions on Green Communications and Networking*, vol. 10, 2026.
+Run the full simulation:
+
+cd ris_localization
+main_simulation
+
+This executes all stages including:
+
+- Beam steering validation  
+- Localization estimation  
+- Multipath impact analysis  
+- Pose graph SLAM refinement  
 
 ---
 
-## 👤 Author
-**Yuanzhe (Nikola) Chen**
-* M.Eng in Electrical Engineering student @ UNSW Sydney.
-* Tesla Engineering Key Opinion Leader (KOL).
-* Interested in Autonomous Driving Systems, Robotics, Path Planning, and Embodied AI.
+## System Structure
+
+Core components:
+
+- Channel model (mmWave + RIS)  
+- Beamforming and phase shift design  
+- Localization estimator  
+- SLAM-based correction  
+- Data interface for real-world datasets  
+
+---
+
+## Research Context
+
+This project reflects key research challenges in autonomous systems:
+
+- Integration of communication and localization  
+- Robust estimation under uncertainty  
+- System-level coordination in cyber-physical systems  
+- Bridging theoretical models with implementable algorithms  
+
+---
+
+## Requirements
+
+- MATLAB R2021b or later  
+
+---
+
+## Notes
+
+This repository is intended as a research-oriented implementation, focusing on system understanding, theoretical grounding, and reproducibility rather than production deployment.
+
+---
+
+## License
+
+MIT License

@@ -95,6 +95,27 @@ This repository is intended as a research-oriented implementation, focusing on s
 
 ---
 
+## 👤 Author
+
+**Yuanzhe (Nikola) Chen**
+
+PhD Applicant (Fall 2027, United States preferred) | Autonomous Driving & Robotics | Control, Planning & Energy Systems | M.Eng (EE) @ UNSW
+
+Research interests:
+
+* Autonomous Driving & Robotics
+* Control Theory & Optimal Control
+* EV Energy Systems & Optimization
+
+---
+
+## 📬 Contact
+
+Feel free to reach out for collaboration or discussion:
+
+🔗 LinkedIn: www.linkedin.com/in/yuanzhe-chen-6b2158351
+
+---
 ## License
 
 MIT License

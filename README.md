@@ -99,7 +99,7 @@ This repository is intended as a research-oriented implementation, focusing on s
 
 **Yuanzhe (Nikola) Chen**
 
-PhD Applicant (Fall 2027, United States preferred) | Autonomous Driving & Robotics | Control, Planning & Energy Systems | M.Eng (EE) @ UNSW
+PhD Applicant (Fall 2027, United States & Australia preferred) | Autonomous Driving & Robotics | Control, Planning & Energy Systems | M.Eng (EE) @ UNSW
 
 Research interests:
 

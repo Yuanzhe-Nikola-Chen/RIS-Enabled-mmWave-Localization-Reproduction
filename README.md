@@ -111,12 +111,6 @@ This repository is intended as a research-oriented implementation, focusing on s
 
 PhD Applicant (Fall 2027) · M.Eng in Electrical Engineering @ UNSW Sydney
 
-Research Interests:
-- Wireless and acoustic sensing, signal processing, and low-power spatial perception
-- Ambient intelligence, embedded AI, and computational sensing for IoT and cyber-physical systems
-- Reconfigurable intelligent surfaces (RIS) and structure-assisted sensing for localization
-- Ultra-low-power sensing, depth-map reconstruction, and mobile computing for micro-robotics
-
 ---
 
 ## Contact

@@ -115,7 +115,6 @@ PhD Applicant (Fall 2027) · M.Eng in Electrical Engineering @ UNSW Sydney
 
 ## Contact
 
-- **Email**: yuanzhe.chen@student.unsw.edu.au
 - **LinkedIn**: [www.linkedin.com/in/yuanzhe-chen-6b2158351](http://www.linkedin.com/in/yuanzhe-chen-6b2158351)
 - **Google Scholar**: [scholar.google.com/citations?hl=en&user=iz5iX38AAAAJ](https://scholar.google.com/citations?hl=en&user=iz5iX38AAAAJ)
 
